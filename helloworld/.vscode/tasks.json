@@ -1,0 +1,66 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Compile C++",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g3",
+				"main.cpp",
+				"-o",
+				"${workspaceFolder}/helloworld"
+			],
+			"group": "build",
+			"problemMatcher": {
+				"fileLocation":[
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern":[
+					{
+						"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"location": 5,
+						"message": 6
+					}
+				]
+			}
+		},
+		{
+			"label": "Compile C",
+			"command": "/opt/toolchain/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc",
+			"args": [
+				"-g3",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/${fileBasenameNoExtension}"
+			],
+			"group": "build",
+			"problemMatcher": {
+				"fileLocation":[
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern":[
+					{
+						"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"location": 5,
+						"message": 6
+					}
+				]
+			}
+		},
+		{
+			"label": "Execute",
+			"command": "${workspaceFolder}/helloworld",
+			"group": "test"
+		}
+	]
+}

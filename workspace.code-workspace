@@ -1,0 +1,49 @@
+{
+	"folders": [
+		{
+			"path": "device_driver"
+		},
+		{
+			"path": "helloworld"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"fs.h": "c",
+			"types.h": "c",
+			"usb_drv.h": "c",
+			"algorithm": "c",
+			"uaccess.h": "c",
+			"interrupt.h": "c",
+			"signal.h": "c",
+			"module.h": "c",
+			"type_traits": "c",
+			"mm.h": "c",
+			"irq.h": "c",
+			"chrono": "c",
+			"*.tcc": "c",
+			"unordered_map": "c",
+			"memory_resource": "c",
+			"functional": "c",
+			"memory": "c",
+			"random": "c",
+			"fstream": "c",
+			"initializer_list": "c",
+			"istream": "c",
+			"numeric": "c",
+			"streambuf": "c",
+			"cmath": "c",
+			"tuple": "c",
+			"utility": "c",
+			"typeinfo": "c",
+			"system_error": "c",
+			"kernel.h": "c",
+			"gpio.h": "c",
+			"blocking_drv.h": "c",
+			"sched.h": "c",
+			"semaphore": "c",
+			"stop_token": "c",
+			"intrpt_drv.h": "c"
+		}
+	}
+}
