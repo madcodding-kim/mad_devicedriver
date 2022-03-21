@@ -1,0 +1,1 @@
+cmd_/home/nvidia/work/vscode/device_driver/platform_drv.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/nvidia/work/vscode/device_driver/platform_drv.ko /home/nvidia/work/vscode/device_driver/platform_drv.o /home/nvidia/work/vscode/device_driver/platform_drv.mod.o;  true
