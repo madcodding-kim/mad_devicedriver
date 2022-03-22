@@ -1,0 +1,27 @@
+obj-m := gpio-sysfs.o
+# ARCH=arm
+# CROSS_COMPILE=arm-linux-gnueabihf-
+# KERN_DIR =/home/kiran/workspace/ldd/source/linux_bbb_5.4/
+ARCH=arm64
+CROSS_COMPILE=aarch64-linux-gnu-
+KERN_DIR=/home/nvidia/bsp_l4t/Linux_for_Tegra/out/modules/lib/modules/4.9.140-tegra-eimx290/build
+HOST_KERN_DIR = /lib/modules/$(shell uname -r)/build/
+
+all:
+	make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KERN_DIR) M=$(PWD) modules
+clean:
+	make -C $(KERN_DIR) M=$(PWD) clean
+	make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KERN_DIR) M=$(PWD) clean
+help:
+	make ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KERN_DIR) M=$(PWD) help
+host:
+	make -C $(HOST_KERN_DIR) M=$(PWD) modules
+
+copy-dtb: 
+	scp ~/workspace/ldd/source/linux_bbb_5.4/arch/arm/boot/dts/am335x-boneblack.dtb debian@192.168.7.2:/home/debian/drivers
+
+copy-drv: 
+	scp *.ko debian@192.168.7.2:/home/debian/drivers
+
+app:
+	$(CROSS_COMPILE)gcc lcd.c gpio.c lcd_app.c -o lcd_app 

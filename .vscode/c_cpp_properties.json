@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "LinuxDeviceDriver",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/nvidia/bsp_l4t/Linux_for_Tegra/sources/kernel/kernel-4.9/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
